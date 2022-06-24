@@ -1,4 +1,4 @@
-package p2022_06_22;
+package p2022_06_23;
 
 import java.util.Scanner;
 
@@ -6,35 +6,25 @@ public class Hw1 {
 
 	public static void main(String[] args) {
 
-		int n1, n2, n3, max, min;
+//		키보드를 이용해서 입력한 정수의 팩토리얼을
+//		  구하는 프로그램을 작성 하세요?
+//			ex) 3! = 3 * 2 * 1
+//		        5! = 5 * 4 * 3 * 2 * 1
+		int a; 
+		int result = 1;
+		// 입력받기
+		System.out.println("정수를 입력하세요?");
 		Scanner sc = new Scanner(System.in);
-		n1 = sc.nextInt();
-		n2 = sc.nextInt();
-		n3 = sc.nextInt();
+		a = sc.nextInt();
 
-		// 내 풀이
-		max = (n1 > n2) ? ((n1 > n3) ? n1 : n3) : ((n2 > n3) ? n2 : n3);
-		min = (n1 < n2) ? ((n1 < n3) ? n1 : n3) : ((n2 < n3) ? n2 : n3);
-		System.out.println("max = " + max);
-		System.out.println("min = " + min);
+		// 팩토리얼
+		for (int i = a; i >= 1; i--) {
+			result *= i;
+		}
 
-		// 다른 방법으로 풀기
-		max = (n1 > n2 && n1 > n3) ? (n1) : ((n2 > n3) ? n2 : n3);
-		min = (n1 < n2 && n1 < n3) ? (n1) : ((n2 < n3) ? n2 : n3);
-		System.out.println("max = " + max);
-		System.out.println("min = " + min);
+		// 출력
+		System.out.println(a + "! = " + result);
 
-		// 강사님 풀이
-		max = (n1 > n2) ? n1 : n2;
-		max = (max > n3) ? max : n3;
-
-		min = (n1 < n2) ? n1 : n2;
-		min = (min < n3) ? min : n3;
-		System.out.println("max = " + max);
-		System.out.println("min = " + min);
-
-		sc.close();
-	
 	}
 
 }
