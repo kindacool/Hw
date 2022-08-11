@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+caption {
+	font-size : 30px;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+<script>
+	// 구구단(2~9단)을 열방향(세로방향)으로 출력하는 프로그램을  작성하세요? (테이블 태그를 사용해서 처리)
+
+	//테이블시작
+	document.write("<table border=1 align=center cellpadding = 15>");
+	document.write("<caption>구구단</caption>");
+	//헤드(1행)
+	document.write("<tr>");
+	for(var dan = 2; dan <= 9; dan++) {
+		document.write("<th>" + dan + "단</th>");
+	}
+	document.write("</tr>")	;
+
+	//바디(2행)
+	document.write("<tr>");
+	for(var dan = 2; dan <= 9; dan++) {
+		document.write("<td>")
+		for(var i = 1; i <= 9; i ++) {
+			document.write(dan + " * " + i + " = " + dan*i + "<br>");
+		}
+		document.write("</td>")
+	}
+	document.write("</tr>")	;
+	//테이블끝
+	document.write("</table>");
+
+</script>
+</body>
+</html>
