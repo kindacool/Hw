@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+
+/* 과제. Math.random()을 이용해서 1~45 사이의 난수를 6개 추출 하는 프로그램을 작성
+(조건 1.중복 되지 않는 값을 구해야함, 2.구해진 값을 오름차순으로 정렬해서 출력) */
+
+	// 배열 선언
+	var random = Array();
+	
+	// 난수 발생, 중복검사, 정렬
+	for(var i = 0; i < 6; i++) {
+		random[i] = Math.ceil(Math.random() * 45);	// 1 ~ 45 난수 발생
+		for(var j = 0; j < i; j++) {
+			// 중복검사
+			if(random[i] == random[j]){
+				i--;
+				break;
+			}
+			// 정렬
+			if(random[i] < random[j]) {
+				random.splice(j, 0, random[i])// 그 j의 자리에 넣어야함
+				random.pop(); // 그리고 맨 마지막의 random[i] 삭제
+			}
+		}
+	}
+	
+	//출력
+	document.write("번호 : " + random + "<br>");
+//	document.write(random.sort() + "<br>"); 는 안된다.
+	
+	
+
+	
+</script>
+</body>
+</html>
